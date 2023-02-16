@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link for bage icon -->
+    <link rel="shortcut icon" href="images/images.jpg" type="image/x-icon">
+    <title>Bookmarker</title>
+    <!-- link for font awesome -->
+    <link rel="stylesheet" href="style/all.css">
+    <!-- for bootsrape -->
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <!-- for css -->
+    <link rel="stylesheet" href="style/index.css" />
+</head>
+
+<body>
+
+    <div class="book-maker mt-5 py-5" id="top_page">
+        <h1 class="text-center"><i class="fa-solid fa-bookmark"></i> Bookmarker</h1>
+        <hr>
+        <div class="contain">
+
+            <h2>Bookmark your favorite sites</h2>
+
+
+            <!-- name -->
+            <label for="siteName" class="mt-4">Site Name</label>
+
+            <div class="name-icon position-relative">
+                <input id="siteName" type="text" class="form-control w-75 m-auto mt-2 " placeholder="Website Name" oninput="validateName()">
+                <i class="fa-regular fa-bookmark"></i>
+                <p id="siteNameAlert" class="text-white bg-danger  d-none  text-center rounded-pill pb-1 mt-3 w-75 mx-auto">You Should start With Capital Letter</p>
+                <p class="text-danger d-none mb-0" id="nameExistMsg">this Name is exist ! Try another one.</p>
+
+
+            </div>
+
+
+            <!-- url -->
+            <label for="siteUrl" class="mt-4"> Site URL</label>
+
+
+
+            <div class="url-icon position-relative">
+                <input id="siteUrl" type="text" class="form-control w-75 m-auto mt-2" placeholder="Website URL" oninput="validateUrl()">  
+                <i class="fa-brands fa-firefox-browser"></i>
+                <p id="siteUrlAlert" class="text-white bg-danger  d-none  text-center rounded-pill pb-1 mt-3 w-75 mx-auto">You Should write the url like www.google.com OR  https://google.us.edi?34535/534534?dfg=g&fg </p>
+
+            </div>
+            <!-- error message -->
+            <p class="text-danger d-none fw-bold mt-3" id="emptyInputs" >FILL THE INPUTS FIRST</p>
+            
+            <!-- add link -->
+            <button class="button mx-auto" onclick="addWebsite()" id="add">
+                ADD LINK
+                <div class="button__horizontal"></div>
+                <div class="button__vertical"></div>
+            </button>
+
+            <!-- <button id="add" onclick="addWebsite()" class="btn btn-outline-primary mt-4 mb-3  m-auto">Submit</button> -->
+
+
+
+            <p id="tryAgainAlert" class="text-white bg-danger  d-none  text-center rounded-pill pb-1 mt-3 w-50 mx-auto">You Shoud Enter Valid Data </p>
+            <!-- update -->
+            <button id="update" onclick="upadteInputs()" class="btn btn-outline-success mt-4 px-2 mb-5 m-auto"
+                style="display:none ;">update Url</button>
+            <br>
+
+            <!-- search -->
+            <div id="search" class="pb-5 position-relative">
+                <input oninput="search(this.value.toLowerCase())" type="text" id="search-id" class="form-control w-75 mx-auto"
+                    placeholder="Search By Name">
+                    <i class="fa-solid fa-magnifying-glass "></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- the container of delete all links button -->
+    <div class="d-flex justify-content-center py-3 " id="deleteAllLinks">
+
+    </div>
+    <!-- delete all links -->
+    <!-- <button class="btn btn-outline-success d-none position-relative start-50 translate-middle-x " onclick="DeleteAllData()" id="areYouSure">I Am Sure Delete All Links</button> -->
+
+
+    <section class="portfolio-experiment d-none text-center mx-5" onclick="DeleteAllData()" id="areYouSure">
+        <a>
+          <span class="text fs-6">I Am Sure Delete All Links</span>
+          <span class="line -right"></span>
+          <span class="line -top"></span>
+          <span class="line -left"></span>
+          <span class="line -bottom"></span>
+        </a>
+      </section>
+
+    <div class="links mt-1">
+        <!-- number of links in the storage -->
+        <p id="numOfItems" class="text-start text-center  mb-3">Total links: <span class="text-success">No Links</span> </p>
+
+
+
+
+<!-- the container of data -->
+        <div class="container">
+            <div class="row g-3 s" id="rowData">
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+<!-- arrow up -->
+    <a href="#top_page">        
+        <div class="arrow-up">
+            <img src="images/index.png" class="rounded-circle"  alt="">
+        </div>
+    </a>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
