@@ -60,13 +60,19 @@ function addWebsite() {
 
 
 
+
+
+
+
+
 // display data
 function displayData()
 {
+ 
     var temp=''
     for(var i=0;i<userSites.length;i++)
-    {
-        
+    { 
+
         temp+=
         `
         <div class="col-md-3">
@@ -74,7 +80,8 @@ function displayData()
 
         <h4 class='text-secondary'>  ${i} </h4>
                <h2 id="demo"></h2>
-            <h3>${userSites[i].name}</h3>
+            <h3 class="d-flex align-items-center rounded-circle justify-content-center"><img id="url_img${i}"class="logo_img" src="images/logos/world-wide-web.png" alt="">
+            ${userSites[i].name}</h3>
 
             <div class="btns d-flex mt-2">
                 <!-- visit -->
@@ -93,6 +100,69 @@ function displayData()
     }
     document.getElementById('rowData').innerHTML=temp;
 
+      let facebook="facebook"
+      let youtube="youtube"
+      let whatsapp="whatsapp"
+      let mail="mail.google.com"
+      let twitter='twitter'
+      let google='https://www.google.com/'
+      let instagram='instagram'
+      let google_play='play.google.com'
+      let messenger='messenger'
+      let linkedin='linkedin'
+      let git="github"
+
+      
+
+      for(var i=0;i<userSites.length;i++)
+    {
+    if(userSites[i].url.toLowerCase().includes(facebook.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/facebook.png")
+    } 
+    else if(userSites[i].url.toLowerCase().includes(youtube.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/youtube.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(whatsapp.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/whatsapp.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(mail.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/gmail.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(twitter.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/twitter.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(google.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/search.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(instagram.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/instagram.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(messenger.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/messenger.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(google_play.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/google-play.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(linkedin.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/linkedin.png")
+    }
+    else if(userSites[i].url.toLowerCase().includes(git.toLowerCase()))
+    {
+      document.getElementById(`url_img${i}`).setAttribute("src","images/logos/github.png")
+    }
+    }
+
+
     if (userSites.length > 0) {
       document.getElementById("deleteAllLinks").innerHTML = 
       `<button class="btn btn-outline-danger  btn-delete" onclick='SURE()'>Delete All ( ${i} )</button>`
@@ -105,6 +175,7 @@ function displayData()
     }
 
 
+ 
 
 
 }
@@ -193,9 +264,9 @@ function search(term)
             <div class="col-md-3">
             <div class="item shadow">
             <h3 class='text-secondary'>  ${i} </h3>
-                <h2>${userSites[i].name.toLowerCase().replace(term,`<span class="text-danger fw-bold">${term}</span>
-                `)}</h2>
-    
+            <h3 class="d-flex align-items-center rounded-circle justify-content-center"><img id="url_img${i}"class="logo_img" src="images/logos/world-wide-web.png" alt="">
+            ${userSites[i].name.toLowerCase().replace(term,`<span class="text-danger fw-bold">${term}</span>
+                `)}</h3>
                 <div class="btns d-flex mt-2">
                     <!-- visit -->
                     <a href="${userSites[i].url}" target="_blank"> <button class="btn" title="Visit-website"><i class="fa-solid fa-eye fa-2x text-info"></i></button></a>
@@ -210,9 +281,122 @@ function search(term)
             `
         }
  
-    }
-    document.getElementById('rowData').innerHTML=temp
 
+    }
+    
+    document.getElementById('rowData').innerHTML=temp
+    
+    let facebook="facebook"
+    let youtube="youtube"
+    let whatsapp="whatsapp"
+    let mail="mail.google.com"
+    let twitter='twitter'
+    let google='https://www.google.com/'
+    let instagram='instagram'
+    let google_play='play.google.com'
+    let messenger='messenger'
+    let linkedin='linkedin'
+    let git="github"
+
+    
+
+    for(var i=0;i<userSites.length;i++)
+  {
+    if(userSites[i].name.toLowerCase().includes(term.toLowerCase()))
+    {
+  if(userSites[i].url.toLowerCase().includes(facebook.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/facebook.png")
+  } 
+   else if(userSites[i].url.toLowerCase().includes(youtube.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/youtube.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(whatsapp.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/whatsapp.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(mail.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/gmail.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(twitter.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/twitter.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(google.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/search.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(instagram.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/instagram.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(messenger.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/messenger.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(google_play.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/google-play.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(linkedin.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/linkedin.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(git.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/github.png")
+  }
+}
+  }
+
+ 
+  if(userSites[i].url.toLowerCase().includes(facebook.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/facebook.png")
+  } 
+   else if(userSites[i].url.toLowerCase().includes(youtube.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/youtube.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(whatsapp.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/whatsapp.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(mail.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/gmail.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(twitter.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/twitter.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(google.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/search.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(instagram.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/instagram.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(messenger.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/messenger.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(google_play.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/google-play.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(linkedin.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/linkedin.png")
+  }
+  else if(userSites[i].url.toLowerCase().includes(git.toLowerCase()))
+  {
+    document.getElementById(`url_img${i}`).setAttribute("src","images/logos/github.png")
+  }
+  
 
 }
 
